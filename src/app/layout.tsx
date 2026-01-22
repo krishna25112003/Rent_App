@@ -35,8 +35,8 @@ export default function RootLayout({
     return (
         <html lang="en" className="smooth-scroll">
             <head>
-                <link rel="icon" href="/favicon.ico" />
-                <link rel="apple-touch-icon" href="/icon-192.png" />
+                <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+                <link rel="apple-touch-icon" href="/icon.svg" />
             </head>
             <body className={inter.className}>
                 <AuthProvider>{children}</AuthProvider>
