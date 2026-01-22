@@ -6,13 +6,13 @@ import { AuthProvider } from '@/contexts/AuthContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Rent Management System',
+    title: 'RentWell - Property Management',
     description: 'Professional multi-user rent management system for landlords',
     manifest: '/manifest.json',
     appleWebApp: {
         capable: true,
         statusBarStyle: 'default',
-        title: 'RentApp',
+        title: 'RentWell',
     },
     formatDetection: {
         telephone: false,

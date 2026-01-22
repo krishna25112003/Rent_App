@@ -1,11 +1,11 @@
 {
-    "name": "Rent Management System",
-    "short_name": "RentApp",
-    "description": "Professional multi-user rent management system for landlords",
+    "name": "RentWell",
+    "short_name": "RentWell",
+    "description": "RentWell - Professional Rent Management App",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#0ea5e9",
+    "theme_color": "#1e3a8a",
     "orientation": "portrait-primary",
     "icons": [
         {
