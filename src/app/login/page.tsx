@@ -51,8 +51,8 @@ export default function LoginPage() {
 
     return (
         <div className="min-h-screen flex flex-col lg:flex-row bg-white">
-            {/* Left Side - Branding */}
-            <div className="lg:w-1/2 bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8 lg:p-16 flex flex-col justify-between relative overflow-hidden">
+            {/* Left Side - Branding (Desktop Only) */}
+            <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-slate-900 to-slate-800 text-white p-16 flex-col justify-between relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
@@ -61,7 +61,7 @@ export default function LoginPage() {
                         <Logo className="w-12 h-12" textSize="text-3xl" showText={true} theme="light" />
                     </div>
 
-                    <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                    <h1 className="text-5xl font-bold mb-6 leading-tight">
                         Rent management made <span className="text-green-400">easy</span>.
                     </h1>
                     <p className="text-lg text-slate-300 max-w-md">
@@ -96,18 +96,30 @@ export default function LoginPage() {
             </div>
 
             {/* Right Side - Form */}
-            <div className="lg:w-1/2 flex items-center justify-center p-8 lg:p-16 bg-slate-50">
+            <div className="flex-1 flex items-center justify-center p-6 lg:p-16 bg-slate-50">
                 <div className="w-full max-w-md space-y-8">
+
+                    {/* Mobile Header (Visible only on mobile) */}
+                    <div className="lg:hidden flex flex-col items-center text-center mb-8">
+                        <div className="bg-white p-4 rounded-2xl shadow-sm mb-6">
+                            <Logo className="w-10 h-10" textSize="text-2xl" showText={true} theme="dark" />
+                        </div>
+                        <h1 className="text-2xl font-bold text-slate-900">
+                            Rent<span className="text-green-600">Well</span>
+                        </h1>
+                        <p className="text-slate-500 text-sm mt-1">Property Management App</p>
+                    </div>
+
                     <div className="text-center lg:text-left">
-                        <h2 className="text-3xl font-bold text-slate-900">
+                        <h2 className="text-2xl lg:text-3xl font-bold text-slate-900">
                             {isSignUp ? 'Create Account' : 'Welcome Back'}
                         </h2>
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 text-sm lg:text-base">
                             {isSignUp ? 'Enter your details to get started' : 'Sign in to access your dashboard'}
                         </p>
                     </div>
 
-                    <form onSubmit={handleEmailAuth} className="mt-8 space-y-6">
+                    <form onSubmit={handleEmailAuth} className="mt-8 space-y-6 bg-white lg:bg-transparent p-6 lg:p-0 rounded-2xl shadow-sm lg:shadow-none border lg:border-none border-slate-100">
                         {error && (
                             <div className="p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2 text-red-700">
                                 <span className="text-sm font-medium">{error}</span>
@@ -155,7 +167,7 @@ export default function LoginPage() {
                         <button
                             type="submit"
                             disabled={isSigningIn}
-                            className={`w-full btn btn-primary flex items-center justify-center ${isSigningIn ? 'opacity-75 cursor-not-allowed' : ''}`}
+                            className={`w-full btn btn-primary flex items-center justify-center py-3 ${isSigningIn ? 'opacity-75 cursor-not-allowed' : ''}`}
                         >
                             {isSigningIn ? (
                                 <>
